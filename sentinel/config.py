@@ -1,0 +1,3 @@
+class Config:
+    TIMEOUT = 10
+    MAX_RETRIES = 3
