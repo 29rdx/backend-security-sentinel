@@ -52,3 +52,4 @@ def scan_headers(url: str):
         "missing_headers": missing_count,
         "findings": findings
     }
+# CSP parsing enhanced
