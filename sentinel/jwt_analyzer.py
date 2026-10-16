@@ -57,3 +57,4 @@ def analyze_jwt(token: str):
         "vulnerability_count": len(vulnerabilities),
         "vulnerabilities": vulnerabilities
     }
+# Optimized token claims validation
