@@ -1,0 +1,21 @@
+name: 🛡️ Bandit Security SAST
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  sast:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run Bandit SAST Check
+        run: |
+          pip install bandit
+          bandit -r sentinel/ -ll -ii
