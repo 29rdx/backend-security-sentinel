@@ -1,53 +1,20 @@
-# 🛡️ Backend Security Sentinel
+# Backend Security Sentinel 🛡️
 
-[![Security CI](https://github.com/29rdx/backend-security-sentinel/actions/workflows/security-ci.yml/badge.svg)](https://github.com/29rdx/backend-security-sentinel/actions)
-[![GitHub Stars](https://img.shields.io/github/stars/29rdx/backend-security-sentinel?style=social)](https://github.com/29rdx/backend-security-sentinel/stargazers)
-[![Python Version](https://img.shields.io/badge/python-3.9%20%7C%203.10%20%7C%203.11%20%7C%203.12-blue)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![OWASP Compliant](https://img.shields.io/badge/OWASP-API%20Security%20Top%2010-emerald)](https://owasp.org/)
+[![CI/CD Security Pipeline](https://github.com/29rdx/backend-security-sentinel/actions/workflows/security-ci.yml/badge.svg)](https://github.com/29rdx/backend-security-sentinel/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python: 3.10+](https://img.shields.io/badge/Python-3.10%2B-brightgreen.svg)](https://python.org)
 
-**Production-ready Backend Security Audit & Vulnerability Scanner** designed for high-concurrency microservices, REST/GraphQL APIs, and zero-trust backend architectures.
+An enterprise-grade DevSecOps vulnerability scanner and security posture auditor for backend APIs and distributed endpoints.
 
-Developed by [**Rupraj Datta (@29rdx)**](https://github.com/29rdx) • Software & Backend Systems Engineer.
+## 🚀 Key Modules
+- **OWASP Header Auditor**: Verifies CSP, HSTS, X-Content-Type-Options, Referrer-Policy, Permissions-Policy.
+- **CORS Leakage Detector**: Checks wildcard reflection, null origin bypass, and credentialed cross-origin leakage.
+- **JWT Inspector**: Audits algorithm confusion, weak symmetric keys, expired claims, and signature validity.
+- **Shannon Entropy Detector**: Detects leaked API credentials and authorization tokens in payload streams.
+- **Executive HTML Reporter**: Compiles automated audit reports for security compliance teams.
 
----
-
-## 🌟 Stargazers & Community
-If you find this security toolkit useful for auditing or hardening your APIs, **please star this repository!** It helps the tool reach more engineers and supports open-source security research.
-
-[![Star History Chart](https://api.star-history.com/svg?repos=29rdx/backend-security-sentinel&type=Date)](https://star-history.com/#29rdx/backend-security-sentinel&Date)
-
----
-
-## 🚀 Key Security Modules
-
-- 🔒 **HTTP Security Headers Auditor**: Benchmarks endpoints against OWASP recommended baseline (HSTS, CSP, X-Frame-Options, Permissions-Policy).
-- 🔑 **JWT Security Inspector**: Detects algorithm confusion vulnerabilities (`alg: none`), weak signatures, and missing expiration constraints.
-- 🌐 **CORS Origin Misconfiguration Tester**: Audits wildcard reflections and authenticated credential leaks.
-- ⚡ **Zero External Dependencies**: Pure Python standard library implementation for zero-dependency CI/CD pipelines.
-
----
-
-## 📦 Quickstart
-
+## 💻 Installation & Usage
 ```bash
-# Clone the repository
-git clone https://github.com/29rdx/backend-security-sentinel.git
-cd backend-security-sentinel
-
-# Audit HTTP security headers of an API endpoint
-python3 -m sentinel.cli scan-headers https://api.github.com
-
-# Inspect and verify a JWT token
-python3 -m sentinel.cli inspect-jwt "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+pip install -r requirements.txt
+python -m sentinel.cli https://target-api.com --fail-on-high --html report.html
 ```
-
-### JSON Output for DevSecOps Pipelines:
-```bash
-python3 -m sentinel.cli scan-headers https://example.com --json > audit-report.json
-```
-
----
-
-## 🛡️ License
-Released under the [MIT License](LICENSE). Built for the global open-source developer community.
