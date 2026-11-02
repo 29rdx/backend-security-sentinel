@@ -4,8 +4,8 @@ import re
 XSS_PATTERNS = [
     re.compile(r"<script[^>]*>.*?</script>", re.IGNORECASE | re.DOTALL),
     re.compile(r"javascript:[^\s"'>]+", re.IGNORECASE),
-    re.compile(r"onerror\s*=\s*['"].*?['"]", re.IGNORECASE),
-    re.compile(r"onload\s*=\s*['"].*?['"]", re.IGNORECASE),
+    re.compile(r'onerror\s*=\s*[\'"].*?[\'"]', re.IGNORECASE),
+    re.compile(r'onload\s*=\s*[\'"].*?[\'"]', re.IGNORECASE),
     re.compile(r"eval\s*\([^\)]*\)", re.IGNORECASE),
 ]
 
