@@ -1,34 +1,21 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "backend-security-sentinel"
-version = "1.2.0"
-authors = [
-  { name="Rupraj Datta", email="dattarupraj@gmail.com" },
-]
-description = "Production-ready Backend Security Audit & Vulnerability Scanner for OWASP API Security Top 10"
+version = "1.3.0"
+description = "Production-grade OWASP API Security auditor, vulnerability scanner, and DevSecOps analyzer"
 readme = "README.md"
-requires-python = ">=3.9"
+authors = [{ name = "Rupraj Datta", email = "dattarupraj@gmail.com" }]
 license = { text = "MIT" }
+requires-python = ">=3.9"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
     "Topic :: Security",
-    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Quality Assurance"
 ]
-dependencies = [
-    "requests>=2.28.0",
-    "cryptography>=41.0.0",
-    "pyjwt>=2.8.0",
-    "rich>=13.0.0",
-]
-
-[project.urls]
-"Homepage" = "https://github.com/29rdx/backend-security-sentinel"
-"Bug Tracker" = "https://github.com/29rdx/backend-security-sentinel/issues"
 
 [project.scripts]
-backend-sentinel = "sentinel.cli:main"
+sentinel = "backend_security_sentinel.cli:main"
