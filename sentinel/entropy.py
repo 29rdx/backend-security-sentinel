@@ -12,7 +12,7 @@ def calculate_shannon_entropy(data: str) -> float:
         entropy += - p_x * math.log2(p_x)
     return entropy
 
-def is_high_entropy_secret(token: str, threshold: float = 4.2) -> bool:
+def is_high_entropy_secret(token: str, threshold: float = 3.8) -> bool:
     if len(token) < 16:
         return False
     return calculate_shannon_entropy(token) >= threshold
