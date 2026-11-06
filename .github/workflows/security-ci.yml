@@ -17,6 +17,9 @@ jobs:
           python-version: "3.11"
           cache: "pip"
       - name: Install dependencies
-        run: pip install -r requirements.txt pytest
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -e .
       - name: Run Test Suite
         run: pytest -v tests/
